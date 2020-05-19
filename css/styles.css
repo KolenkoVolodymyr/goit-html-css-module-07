@@ -142,7 +142,21 @@ a {
   width: 290px;
 }
 
-.services-list-item::before {
+.services-list-item__commerce::before {
+  background-image: url(../images/service-icons/commerce.png);
+}
+
+.services-list-item__responsive::before {
+  background-image: url(../images/service-icons/web.png);
+}
+
+.services-list-item__security::before {
+  background-image: url(../images/service-icons/security.png);
+}
+
+.services-list-item__commerce::before,
+.services-list-item__responsive::before,
+.services-list-item__security::before {
   content: '';
   display: block;
   width: 66px;
@@ -151,22 +165,6 @@ a {
   border: 3px solid #fed136;
   margin: 0 auto;
   margin-bottom: 30px;
-}
-
-.services-list-item:first-child::before {
-  background-image: url(../images/service-icons/commerce.png);
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.services-list-item:nth-child(2)::before {
-  background-image: url(../images/service-icons/web.png);
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.services-list-item:last-child::before {
-  background-image: url(../images/service-icons/security.png);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -213,8 +211,6 @@ a {
   margin-bottom: 80px;
 }
 
-/*   START FORM    */
-
 .input-wrapper {
   width: 455px;
   height: 210px;
@@ -229,12 +225,14 @@ a {
   justify-content: space-between;
 }
 
-.contact-form__input {
+.contact-form-input {
   width: 455px;
   height: 50px;
 }
 
-.contact-form__input,
+.contact-form-input__name,
+.contact-form-input__email,
+.contact-form-input__subject,
 .contact-form-message {
   background-color: #ffffff;
   border: 1px solid #cccccc;
@@ -245,23 +243,23 @@ a {
   font-family: 'Montserrat';
   font-weight: 700;
 }
-.contact-form__input::placeholder,
+.contact-form-input::placeholder,
 .contact-form-message::placeholder {
   text-transform: uppercase;
   color: #bbbbbb;
 }
 
-.contact-form__input:required:focus,
+.contact-form-input:required:focus,
 .contact-form-message:required:focus {
   outline: none;
 }
 
-.contact-form__input:required:focus:valid:not(:placeholder-shown),
+.contact-form-input:required:focus:valid:not(:placeholder-shown),
 .contact-form-message:required:focus:valid:not(:placeholder-shown) {
   border-color: green;
 }
 
-.contact-form__input:required:focus:invalid:not(:placeholder-shown),
+.contact-form-input:required:focus:invalid:not(:placeholder-shown),
 .contact-form-message:required:focus:invalid:not(:placeholder-shown) {
   border-color: red;
 }
